@@ -26,6 +26,6 @@ void Room::updatePrix(int prix)
 
 std::ostream& operator<<(std::ostream& flux, Room& room)
 {
-	flux << "Numero : " << room.getNumero() << "   Type : " << room.getType() << "   Prix : " << room.getPrix() << std::endl;
+	flux << "Chambre numero " << room.getNumero() << "   Type : " << room.getType() << "   Prix : " << room.getPrix() << std::endl;
 	return flux;
 }

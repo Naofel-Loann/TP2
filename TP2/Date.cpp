@@ -70,7 +70,7 @@ void Date::back() {
     }
 }
 
-int Date::convert(Date d)
+int convert(Date d)
 {
     return d.year() * 10000 + d.month() * 100 + d.day() * 1;
 }
@@ -110,4 +110,11 @@ int dayOfYear(Date d) {
 
 std::string toString(Date d) {
     return std::to_string(d.day()) + "/" + std::to_string(d.month()) + "/" + std::to_string(d.year());
+}
+
+Date operator+(Date d, int n)
+{
+    for (int i = 0; i < n; i++)
+        d.next();
+    return d;
 }

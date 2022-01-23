@@ -11,13 +11,16 @@ class Reservation
 public:
 	Reservation(Date date, int nombreNuit, Hotel hotel, Room room, Customer client);
 	Date getDateStart();
+	void setDateStart(Date d);
 	int getNombreNuit();
+	void setNombreNuit(int nombreNuit);
 	std::string getIdHotel();
 	int getIdRoom();
+	void setRoomId(int roomId);
 	std::string getIdCustomer();
 	double getMontantTotal();
 	void updateDate(Date newdate);
-	void updateNuit(int newnight);
+	int getId();
 
 private:
 	Date _dateStart;
@@ -26,7 +29,9 @@ private:
 	int _idRoom;
 	std::string _idCustomer;
 	double _montantTotal;
-
+	int _reservation_id;
 };
+
+std::ostream& operator<<(std::ostream& flux, Reservation& reservation);
 
 #endif
