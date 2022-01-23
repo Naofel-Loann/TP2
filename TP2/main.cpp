@@ -115,17 +115,24 @@ void setReservation(std::vector<Reservation>& vectorReservation, std::vector<Roo
 	int jour = 0, mois = 0, annee = 0, nombreNuit = 0;
 	std::cout << "Creation d'une nouvelle reservation:" << std::endl;
 	std::string type;
-	std::cout << "Entrez un jour : ";
-	std::cin >> jour;
-	std::cout << "Entrez un mois : ";
-	std::cin >> mois;
-	std::cout << "Entrez une annee : ";
-	std::cin >> annee;
-	std::cout << "Entrez un nombre de nuit : ";
-	std::cin >> nombreNuit;
+	
+
+	while (!isDate(annee, mois, jour))
+	{
+		std::cout << "La valeur entree n'est pas une date valide" << std::endl;
+		std::cout << "Entrez un jour : ";
+		std::cin >> jour;
+		std::cout << "Entrez un mois : ";
+		std::cin >> mois;
+		std::cout << "Entrez une annee : ";
+		std::cin >> annee;
+	}
 
 	std::cout << "Entrez le type de chambre souhaite : ";
 	std::cin >> type;
+		
+	std::cout << "Entrez un nombre de nuit : ";
+	std::cin >> nombreNuit;
 
 	if (vectorReservation.size() != 0)
 	{
